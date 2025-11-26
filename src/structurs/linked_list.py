@@ -43,6 +43,8 @@ class LinkedList:
             self.tail.next = new_element
             self.tail = new_element
 
+        self.size += 1
+
 
     def pop_front(self) -> int:
         """

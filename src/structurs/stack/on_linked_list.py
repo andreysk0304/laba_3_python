@@ -1,5 +1,5 @@
 from src.exceptions import StackIsEmpty
-from src.structurs.stack.min_linked_list import MinLinkedList
+from src.structurs.min_linked_list import MinLinkedList
 
 
 class LinkedListStack:

@@ -16,3 +16,13 @@ class StackIsEmpty(Exception):
 class QueueIsEmpty(Exception):
     def __init__(self):
         super().__init__('Очередь пуста.')
+
+
+class FlagNotFound(Exception):
+    def __init__(self, flag: str):
+        super().__init__(f'Флаг "{flag}" не найден.')
+
+
+class ParamsError(Exception):
+    def __init__(self, msg: str):
+        super().__init__(f'{msg}')
