@@ -1,4 +1,4 @@
-from tests.benchmarks.timeit_once import timeit_once
+from src.benchmarks.timeit_once import timeit_once
 
 
 def benchmark_sorts(arrays: dict[str, list], algos: dict[str, callable]):

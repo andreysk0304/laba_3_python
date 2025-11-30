@@ -26,3 +26,8 @@ class FlagNotFound(Exception):
 class ParamsError(Exception):
     def __init__(self, msg: str):
         super().__init__(f'{msg}')
+
+
+class LowerBiggestHeighError(Exception):
+    def __init__(self):
+        super().__init__('Минимальный элемент списка больше максимального')

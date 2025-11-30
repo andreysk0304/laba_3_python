@@ -2,7 +2,7 @@ import sys
 import logging
 
 from src.exceptions import ParamsError
-from tests.benchmarks.timeit_once import timeit_once_cli
+from src.benchmarks.timeit_once import timeit_once_cli
 
 from src.cli.command import Command
 from src.cli.constants import SORTES, ALGOS, STACK, QUEUE, COMMANDS
@@ -192,4 +192,5 @@ def main_loop():
 
         except Exception as error:
             logging.error(f'Ошибка исполнения команды "{inpt}": {error}')
-            print('>', end='')
+
+            print('>', end='', file=sys.stderr)

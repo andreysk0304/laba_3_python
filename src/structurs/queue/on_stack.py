@@ -8,7 +8,7 @@ class QueueOnLinkedListStacks:
         self.out_stack = LinkedListStack()
 
 
-    def enqueue(self, x: int) -> None:
+    def enqueue(self, x: int) -> bool:
         """
         Добавляет элемент в очередь.
 
@@ -17,6 +17,7 @@ class QueueOnLinkedListStacks:
         """
 
         self.in_stack.push(x)
+        return True
 
 
     def dequeue(self) -> int:
@@ -30,7 +31,6 @@ class QueueOnLinkedListStacks:
             if self.in_stack.is_empty():
                 raise QueueIsEmpty()
 
-            # переливаем элементы из in -> out
             while not self.in_stack.is_empty():
                 self.out_stack.push(self.in_stack.pop())
 
@@ -48,7 +48,6 @@ class QueueOnLinkedListStacks:
             if self.in_stack.is_empty():
                 raise QueueIsEmpty()
 
-            # переливаем, чтобы вернуть первый
             while not self.in_stack.is_empty():
                 self.out_stack.push(self.in_stack.pop())
 

@@ -8,7 +8,7 @@ class StackList:
         self.size = 0
 
 
-    def push(self, x: int) -> None:
+    def push(self, x: int) -> bool:
         """
         Добавляет элемент на вершину стека.
 
@@ -23,6 +23,8 @@ class StackList:
 
         self.size += 1
 
+        return True
+
 
     def pop(self) -> int:
         """
@@ -31,8 +33,8 @@ class StackList:
         :return: Возвращает удалённый элемент стэка.
         """
 
-        if not self.data:
-            raise IndexError("Стек пуст.")
+        if self.is_empty():
+            raise StackIsEmpty()
 
         val = self.data.pop()
 
@@ -51,7 +53,7 @@ class StackList:
         :return: Верхний элемент стэка.
         """
 
-        if not self.data:
+        if self.is_empty():
             raise StackIsEmpty()
 
         return self.data[-1]
@@ -64,7 +66,7 @@ class StackList:
         :return: Минимальное значение стэка.
         """
 
-        if not self.mins:
+        if self.is_empty():
             raise StackIsEmpty()
 
         return self.mins[-1]

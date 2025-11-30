@@ -31,13 +31,13 @@ class Command:
 
 
     def _get_flags(self) -> None:
-        self.flags = [token for token in self.tokens if '-' in token and self._check_flag(token)]
+        self.flags = [token for token in self.tokens if token.startswith('-') and not token.lstrip('-').isdigit() and self._check_flag(token)]
 
 
     def _get_params(self) -> None:
         tokens = self.tokens[1:]
 
-        self.params = [token for token in tokens if '-' not in token]
+        self.params = [token for token in tokens if not (token.startswith('-') and not token.lstrip('-').isdigit())]
 
 
     def _get_command(self) -> None:

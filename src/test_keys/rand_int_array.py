@@ -1,7 +1,12 @@
 import random
 
+from src.exceptions import LowerBiggestHeighError
+
 
 def rand_int_array(n: int, lo: int, hi: int, *, distinct: bool = False, seed=None) -> list[int]:
+
+    if lo >= hi:
+        raise LowerBiggestHeighError()
 
     if seed is not None:
         random.seed(seed)

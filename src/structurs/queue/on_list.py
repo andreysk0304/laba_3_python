@@ -8,7 +8,7 @@ class ListQueue:
         self.size = 0
 
 
-    def enqueue(self, x: int) -> None:
+    def enqueue(self, x: int) -> bool:
         """
         Добавляет элемент в конец очереди.
 
@@ -18,6 +18,8 @@ class ListQueue:
         self.data.append(x)
         self.size += 1
 
+        return True
+
 
     def dequeue(self) -> int:
         """
@@ -26,7 +28,7 @@ class ListQueue:
         :return: Удалённый элемент.
         """
 
-        if not self.data:
+        if self.is_empty():
             raise QueueIsEmpty()
 
         self.size -= 1

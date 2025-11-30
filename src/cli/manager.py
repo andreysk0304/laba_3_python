@@ -1,7 +1,7 @@
 from src.structurs.queue.on_linked_list import LinkedListQueue
 from src.structurs.stack.on_linked_list import LinkedListStack
-from tests.test_keys.rand_float_array import rand_float_array
-from tests.test_keys.rand_int_array import rand_int_array
+from src.test_keys.rand_float_array import rand_float_array
+from src.test_keys.rand_int_array import rand_int_array
 
 
 class CliManager:

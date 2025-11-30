@@ -10,19 +10,20 @@ def bubble_sort(x: list[int]) -> list[int]:
     """
 
     count = len(x)
-
     if count <= 1:
         return x
 
-    for i in range(count-1):
+    x = x.copy()
+
+    for i in range(count - 1):
         swapped = False
 
         for j in range(count - i - 1):
-            if x[j] > x[j+1]:
-                x[j+1], x[j] = x[j], x[j+1]
+            if x[j] > x[j + 1]:
+                x[j], x[j + 1] = x[j + 1], x[j]
                 swapped = True
 
-            if swapped:
-                break
+        if not swapped:
+            break
 
     return x

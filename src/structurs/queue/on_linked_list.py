@@ -7,7 +7,7 @@ class LinkedListQueue:
         self.list = LinkedList()
 
 
-    def enqueue(self, x: int) -> None:
+    def enqueue(self, x: int) -> bool:
         """
         Добавляет элемент в конец очереди.
 
@@ -16,6 +16,7 @@ class LinkedListQueue:
         """
 
         self.list.push_back(x)
+        return True
 
 
     def dequeue(self) -> int:
@@ -24,6 +25,9 @@ class LinkedListQueue:
 
         :return: Элемент из начала очереди.
         """
+
+        if self.is_empty():
+            raise QueueIsEmpty()
 
         return self.list.pop_front()
 

@@ -7,7 +7,7 @@ class LinkedListStack:
         self.list = MinLinkedList()
 
 
-    def push(self, x: int) -> None:
+    def push(self, x: int) -> bool:
         """
         Добавляет элемент на вершину стека.
 
@@ -16,6 +16,7 @@ class LinkedListStack:
         """
 
         self.list.push_front(x)
+        return True
 
 
     def pop(self) -> int:
@@ -24,6 +25,9 @@ class LinkedListStack:
 
         :return: Удалённый элемент с вершины стека.
         """
+
+        if self.is_empty():
+            raise StackIsEmpty()
 
         return self.list.pop_front()
 
@@ -47,6 +51,10 @@ class LinkedListStack:
 
         :return: Минимальный элемент стэка.
         """
+
+        if self.is_empty():
+            raise StackIsEmpty()
+
         return self.list.min()
 
 
